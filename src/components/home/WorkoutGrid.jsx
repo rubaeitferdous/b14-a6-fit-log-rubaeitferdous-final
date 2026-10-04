@@ -8,23 +8,23 @@ export default async function WorkoutGrid() {
     <section
       id="library"
       aria-labelledby="library-heading"
-      className="w-full bg-[#0c0d0f] px-5 py-10 text-white sm:px-8 sm:py-12"
+      className="w-full bg-[#0b0c0f] px-5 pb-14 pt-12 text-white sm:px-8 sm:pb-20 sm:pt-16"
     >
-      <div className="mx-auto max-w-[1440px]">
-        <div className="mb-7">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="mb-8 flex flex-col gap-2 border-b border-[#252a33] pb-5 sm:mb-9 sm:flex-row sm:items-end sm:justify-between sm:pb-6">
           <h2
             id="library-heading"
-            className="font-[Impact,'Arial_Narrow',sans-serif] text-[28px] font-bold uppercase leading-none tracking-[-0.02em] sm:text-[32px]"
+            className="font-display text-[34px] font-semibold uppercase leading-none tracking-[-0.02em] sm:text-[40px]"
           >
             The Library
           </h2>
-          <p className="mt-2 text-[12px] text-[#969ba6] sm:text-[13px]">
+          <p className="m-0 text-[14px] text-[#9ba2ae] sm:text-[15px]">
             Twelve lifts covering every major muscle group.
           </p>
         </div>
 
         {workouts.length > 0 ? (
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3">
             {workouts.map((workout) => (
               <WorkoutCard key={workout.id} workout={workout} />
             ))}

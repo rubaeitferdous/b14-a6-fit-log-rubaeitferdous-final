@@ -14,9 +14,9 @@ export default function PlanTabs({
   ];
 
   return (
-    <div className="flex flex-col gap-4 border-b border-[#232732] pb-3 sm:flex-row sm:items-center sm:justify-between sm:pb-0">
+    <div className="flex flex-col gap-4 border-b border-[#232732] pb-4 sm:flex-row sm:items-center sm:justify-between sm:pb-0">
       <div
-        className="inline-flex w-fit items-center gap-1 rounded-xl border border-[#232732] bg-[#151921] p-1"
+        className="inline-flex w-fit max-w-full items-center gap-1 rounded-xl border border-[#232732] bg-[#151921] p-1"
         role="tablist"
         aria-label="Workout list"
       >
@@ -30,7 +30,7 @@ export default function PlanTabs({
               role="tab"
               aria-selected={selected}
               onClick={() => onTabChange?.(tab.id)}
-              className={`rounded-lg px-3 py-2 text-xs font-medium transition-colors ${
+              className={`rounded-lg px-3 py-2.5 text-[13px] font-medium transition-colors sm:px-4 ${
                 selected
                   ? "bg-[#232732] text-white"
                   : "text-[#8a92a0] hover:text-white"
@@ -47,13 +47,13 @@ export default function PlanTabs({
         })}
       </div>
 
-      <label className="flex items-center gap-3 text-xs text-[#8a92a0]">
+      <label className="flex items-center gap-3 text-[13px] text-[#9ba2ae] sm:justify-self-end">
         <span>Sort By</span>
         <span className="relative">
           <select
             value={sort}
             onChange={(event) => onSortChange?.(event.target.value)}
-            className="h-[34px] min-w-[112px] appearance-none rounded-md border border-[#232732] bg-[#14171e] py-1 pl-3 pr-8 text-xs text-white outline-none transition-colors focus:border-[#caff00]"
+            className="h-[38px] min-w-[124px] appearance-none rounded-md border border-[#232732] bg-[#14171e] py-1 pl-3 pr-8 text-[13px] text-white outline-none transition-colors focus:border-[#caff00]"
           >
             <option value="duration">Duration</option>
             <option value="calories">Calories</option>
