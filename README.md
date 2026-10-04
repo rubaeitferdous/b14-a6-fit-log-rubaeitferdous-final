@@ -56,3 +56,4 @@ Open <http://localhost:3000> in your browser.
 ## Deployment
 
 FitLog can be deployed to a Next.js-compatible hosting provider, such as Vercel. Connect the repository, install dependencies, and use `npm run build` as the build command. No environment variables are required by the current application.
+Currently deployed link: https://github.com/rubaeitferdous/b14-a6-fit-log-rubaeitferdous-final
