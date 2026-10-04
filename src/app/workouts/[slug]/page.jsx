@@ -1,5 +1,6 @@
 import { Inter, Oswald } from "next/font/google";
 import { notFound } from "next/navigation";
+import ActionButtons from "@/components/workout/ActionButtons";
 import getWorkouts from "@/data/workouts";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-detail-inter" });
@@ -98,22 +99,7 @@ export default async function WorkoutDetailsPage({ params }) {
             </ol>
           </section>
 
-          <div className="mt-7 flex flex-wrap gap-3">
-            <button
-              type="button"
-              className="inline-flex h-[44px] w-[203px] items-center justify-center gap-2 rounded-[3px] bg-[#caff00] px-4 text-[10px] font-bold text-[#11120e] transition-colors hover:bg-[#dcff64]"
-            >
-              <span aria-hidden="true" className="text-[15px] leading-none">+</span>
-              Add to today&apos;s plan
-            </button>
-            <button
-              type="button"
-              className="inline-flex h-[46px] w-[163px] items-center justify-center gap-2 rounded-[3px] border border-[#454a54] bg-transparent px-4 text-[10px] font-semibold text-white transition-colors hover:border-[#caff00] hover:text-[#caff00]"
-            >
-              <span aria-hidden="true" className="text-[14px] leading-none">☆</span>
-              Save for later
-            </button>
-          </div>
+          <ActionButtons workout={workout} />
         </div>
       </article>
     </main>

@@ -1,11 +1,7 @@
-import React from 'react';
+import PlanDashboard from "@/components/plan/PlanDashboard";
+import getWorkouts from "@/data/workouts";
 
-const page = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default page;
+export default async function PlanPage() {
+  const workouts = await getWorkouts();
+  return <PlanDashboard workouts={workouts} />;
+}

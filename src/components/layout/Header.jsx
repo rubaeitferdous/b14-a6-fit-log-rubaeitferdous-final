@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { usePlan } from "@/context/PlanContext";
 
 export default function Header() {
   const pathname = usePathname();
+  const { plan, saved } = usePlan();
   const isWorkoutsActive = pathname === "/" || pathname.startsWith("/workouts");
   const isPlanActive = pathname === "/plan";
 
@@ -61,22 +63,22 @@ export default function Header() {
         <div className="flex items-center justify-self-end gap-3 sm:gap-5">
           <Link
             href="/plan"
-            aria-label="Plan: 0 workouts"
+            aria-label={`Plan: ${plan.length} workouts`}
             className="flex items-center gap-1.5 text-[10px] text-[#d0d1d4] transition-colors hover:text-white sm:gap-2"
           >
             <span>Plan</span>
             <span className="grid h-[19px] min-w-[19px] place-items-center rounded-full bg-[#ccff00] px-1 text-[10px] font-semibold leading-none text-[#11120e]">
-              0
+              {plan.length}
             </span>
           </Link>
           <Link
             href="/plan"
-            aria-label="Saved: 0 workouts"
+            aria-label={`Saved: ${saved.length} workouts`}
             className="flex items-center gap-1.5 text-[10px] text-[#a5a7ad] transition-colors hover:text-white sm:gap-2"
           >
             <span>Saved</span>
             <span className="grid h-[19px] min-w-[19px] place-items-center rounded-full border border-[#34363a] px-1 text-[10px] leading-none text-[#d0d1d4]">
-              0
+              {saved.length}
             </span>
           </Link>
         </div>
